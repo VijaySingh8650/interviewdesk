@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --border: rgb(214, 210, 210);
+  --background: #fafafa;
+  --btn: #0095f6;
+}
+button {
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+  color: #385898;
+  font-weight: 600;
+}
+
+.App {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+
+.sidebar{
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  width: 7%;
+  height: 100vh;
+  border-right: 1px solid var(--border);
+}
+
+.flexIcon {
+  height: 90%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.flexIcon > img {
+  cursor: pointer;
+}
+.App > div:nth-child(2) {
+  padding: 0 6rem;
+  width: 100%;
+  background-color: var(--background);
+}
+
+.sidebar_responsive{
+  visibility: hidden;
+  opacity: 0;
+}
+
+@media all and (max-width: 1200px) {
+  .App > div:nth-child(2){
+    padding: 0;
+  }
+  .sidebar{   
+    display: none;
+  }
+  .sidebar_responsive{
+    visibility: visible;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 1rem 2rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+  }
+}

@@ -1,0 +1,116 @@
+.container {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+.container > div {
+  width: 50%;
+}
+.container > div:nth-child(1) {
+  display: flex;
+  justify-content: center;
+}
+
+.picture {
+  border: 1px solid black;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+/* user name css */
+.username {
+  display: grid;
+  grid-template-areas: 'username follow message userpic points';
+  width: 70%;
+  gap: 1rem;
+  align-items: center;
+}
+.username_username {
+  grid-area: username;
+}
+.username_userpoints {
+  grid-area: points;
+}
+.username_userpic {
+  background-color: var(--border);
+  grid-area: userpic;
+}
+.username_message {
+  background-color: var(--border);
+  grid-area: message;
+}
+.username_follow {
+  background-color: var(--btn);
+  color: white;
+  grid-area: follow;
+}
+
+/* name css */
+.name {
+  margin-top: 1rem;
+}
+
+/* divider */
+.divider {
+  border-top: 1px solid var(--border);
+  margin-bottom: 2rem;
+}
+
+/* photos */
+.photos {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  justify-items: center;
+  gap: 1rem;
+}
+.photos_div {
+  height: 100%;
+  width:100%;
+}
+.photos_div > img {
+  height: 100%;
+  width: 100%;
+}
+
+@media all and (max-width: 1200px) {
+  .container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .container > div:nth-child(1) {
+    display: flex;
+    padding-left: 2rem;
+  }
+  .container > div:nth-child(2) {
+    padding-left: 2rem;
+  }
+  .photos {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.3rem;
+  }
+  
+  .username {
+    display: grid;
+    grid-template-areas:
+      'username points .'
+      'follow message userpic';
+    width: 70%;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  .picture {
+    height: 120px;
+    width: 120px;
+  }
+}
+
+@media all and (max-width:500px){
+  .username {
+    width: 50%;
+  }
+}
+
